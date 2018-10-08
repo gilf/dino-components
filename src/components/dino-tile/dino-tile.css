@@ -1,0 +1,32 @@
+:host {
+  cursor: pointer;
+  margin: 10px;
+}
+
+:host li {
+  padding: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  background: rgb(250,250,250);
+  border-radius: 5px;
+  box-sizing: border-box;
+  line-height: 100%;
+  position: relative;
+  vertical-align: top;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+
+:host li:hover:not(.dino-selected) {
+  background: #eee;
+}
+
+:host li img {
+  width: 250px;
+  height: 250px;
+}
+
+:host .dino-selected {
+  background-color: yellow;
+  transition: all 0.5s linear;
+}

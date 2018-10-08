@@ -1,0 +1,32 @@
+:host .drawer {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  z-index: 999;
+  border: solid 1px #EAECEF;
+  transform: translateX(0);
+}
+
+:host .overlay {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000;
+  opacity: 0.3;
+  z-index: 998;
+}
+
+:host .right {
+  right: 0;
+  box-shadow: -3px 0 13px 0 rgba(102, 118, 134, 0.25);
+}
+
+:host .left {
+  left: 0;
+  box-shadow: 3px 0 13px 0 rgba(102, 118, 134, 0.25);
+}

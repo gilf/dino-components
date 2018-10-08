@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Dino Component Library</title>
+  <script src="/build/dino-components.js"></script>
+
+</head>
+<body>
+ <h1>Dinosaurs</h1>
+  <dino-button text="Open Drawer"></dino-button>
+  <dino-tiles></dino-tiles>
+  <dino-details></dino-details>
+  <side-drawer>
+    <h1>Side drawer is open!</h1>
+    <div>Put here your drawer content</div>
+  </side-drawer>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const repeater = document.querySelector('dino-tiles'),
+        details = document.querySelector('dino-details'),
+        drawer = document.querySelector('side-drawer'),
+        btn = document.querySelector('dino-button');
+
+      repeater.dinosaurs = [
+        { name: 'Ankylosaurus', imageSrc: '/assets/ankylosaurus.jpg', description: 'Ankylosaurus was built like a living tank, with extremely thick, bony plates of armor on its body, even including armored eyelids. Its tail also had a second function; it could act as a deadly club. The club was used to swing around and smash into an attacking dinosaur. Its club was so daunting that not even a Tyrannosaurus rex, would want to mess with this alarming species.'},
+        { name: 'Tyrannosaurus rex', imageSrc: '/assets/trex.jpg', description: 'Tyrannosaurus rex, commonly known as T. rex, is a species of theropod dinosaur that lived during the Late Cretaceous Period, 68 to 66 million years ago. Arguably the most famous species of dinosaur, T. rex lived in what is now North America, alongside species such as Ankylosaurus, Edmontosaurus, Pachycephalosaurus and Triceratops.'},
+        { name: 'Ceratosaurus', imageSrc: '/assets/ceratosaurus.jpg', description: 'Ceratosaurus was a medium sized carnivore that lived at the same time as the larger Allosaurus, in the Late Jurassic period. However, it also lived some millions of years before the emergence of the successful allosauroids, being of the more primitive four fingered Ceratosauria. What makes it different and distinctive is the large horn on top of its nose and the two horns over its eyes. The use of it has been debated and is most likely used for display, a weapon, or a special used for courtship battles.'},
+        { name: 'Spinosaurus', imageSrc: '/assets/spinosaurus.jpg', description: 'Spinosaurus ("spined lizard") was a theropod dinosaur that existed in what is now North Africa during the Cretaceous Period. Spinosaurus is the largest of all known carnivorous dinosaurs, even larger than Tyrannosaurus rex, Carcharodontosaurus, and Giganotosaurus.'},
+        { name: 'Stegosaurus', imageSrc: '/assets/stegosaurus.jpg', description: 'Stegosaurus is easily one of the best known dinosaurs and is recognized all over the world. It is the largest and most famous member of the stegosaur family. It roamed the open plains of the Late Jurassic Period in what is now North America. The plates along its back, its small head and spiked tail make it a peculiar and unique dinosaur. This plant-eater evolved to find its food in the low-growing plants of the late Jurassic. The spikes on its tail would have made a powerful weapon against any hungry predators.'},
+        { name: 'Velociraptor', imageSrc: '/assets/velociraptor.jpg', description: 'Velociraptor, in real life, was a genus of dromaeosaurid theropod dinosaur from the Late Cretaceous period which inhabited what is now the Mongolia-China border with other unique dinosaurs. Velociraptor was no bigger than a wolf and with its feathers it bore a very bird-like appearance that would make it all the more different from the films, being more akin to a flightless hawk. It had a long claw ("terrible claw") on the second toe of both feet, 8 cm (3 in) long, which was probably used as a weapon, plunging into the flesh of victims and causing deep wounds.'}
+      ];
+
+      details.dinosaur = repeater.dinosaurs[0];
+
+      window.addEventListener('dinosaurSelected', (evt) => {
+        details.dinosaur = evt.detail;
+      });
+
+      drawer.addEventListener('onOverlayClick', () => {
+        drawer.openDrawer = false;
+      });
+
+      btn.onBtnClick = () => {
+        drawer.openDrawer = !drawer.openDrawer;
+      };
+    });
+  </script>
+</body>
+</html>

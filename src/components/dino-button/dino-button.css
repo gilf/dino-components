@@ -1,0 +1,22 @@
+:host {
+  box-shadow: 0 0 0 2px #9fb4f2;
+  border-radius:10px;
+  border:1px solid #4e6096;
+  display:inline-block;
+  cursor:pointer;
+  color: #283966;
+  font-size: 19px;
+  padding: 12px;
+  text-decoration:none;
+  text-shadow:0 1px 0 #283966;
+}
+
+:host img {
+  padding-right: 3px;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
