@@ -21,7 +21,7 @@ export class DinoButton {
   render() {
     return (
       <a onClick={this.btnClick} role="button">
-        <img src="assets/t-rex-icon.jpg" alt="t-rex icon" />
+        <img src="./assets/t-rex-icon.jpg" alt="t-rex icon" />
         <span>{this.text}</span>
       </a>
     );
