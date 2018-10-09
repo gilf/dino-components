@@ -5,7 +5,7 @@ describe('DinoButton', () => {
     const spy = jest.fn(),
       dinoBtn = new DinoButton();
 
-    dinoBtn.onBtnClick = spy;
+    dinoBtn.btnClicked = spy;
     dinoBtn.btnClick();
 
     expect(spy).toHaveBeenCalled();

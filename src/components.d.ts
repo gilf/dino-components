@@ -23,11 +23,11 @@ export namespace Components {
 
   interface DinoButton {
     'btnClick': () => void;
-    'onBtnClick': () => void;
+    'btnClicked': () => void;
     'text': string;
   }
   interface DinoButtonAttributes extends StencilHTMLAttributes {
-    'onBtnClick'?: () => void;
+    'btnClicked'?: () => void;
     'text'?: string;
   }
 

@@ -7,7 +7,7 @@ import {Component, Prop, Method} from '@stencil/core';
 })
 export class DinoButton {
   @Prop() text: string;
-  @Prop() onBtnClick: () => void;
+  @Prop() btnClicked: () => void;
 
   constructor() {
     this.btnClick = this.btnClick.bind(this);
@@ -15,7 +15,7 @@ export class DinoButton {
 
   @Method()
   btnClick() {
-    this.onBtnClick();
+    this.btnClicked();
   }
 
   render() {
