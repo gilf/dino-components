@@ -11,7 +11,7 @@
   text-shadow:0 1px 0 #283966;
 }
 
-:host img {
+:host svg {
   padding-right: 3px;
   width: 16px;
   height: 16px;
