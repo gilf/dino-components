@@ -33,11 +33,17 @@ describe('dino-tiles', async () => {
     element.setProperty('dinosaurs', dinos);
     await page.waitForChanges();
 
+    const eventSpy = await element.spyOnEvent('dinosaurSelectedIndex');
+
     const ulElm = await page.findAll('dino-tiles >>> dino-tile');
     await ulElm[0].callMethod('dinosaurSelectedHandler');
     await page.waitForChanges();
 
     const liElms = await page.findAll('dino-tiles >>> dino-tile');
     expect(await liElms[0].getProperty('selected')).toEqual(true);
+
+    const receivedEvent = eventSpy.lastEvent;
+    expect(receivedEvent.detail).toEqual(0);
+    expect(receivedEvent.type).toEqual('dinosaurSelectedIndex');
   });
 });

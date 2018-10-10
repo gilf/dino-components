@@ -1,4 +1,4 @@
-import {Component, Listen, Prop, State} from '@stencil/core';
+import {Component, Event, EventEmitter, Listen, Prop, State} from '@stencil/core';
 import { Dino } from "../../classes/Dino";
 
 @Component({
@@ -9,6 +9,7 @@ import { Dino } from "../../classes/Dino";
 export class DinoTiles {
   @State() selected: Dino;
   @Prop() dinosaurs: Array<Dino>;
+  @Event() dinosaurSelectedIndex: EventEmitter<number>;
 
   componentWillLoad() {
     this.selected = this.dinosaurs ? this.dinosaurs[0] : undefined;
@@ -17,6 +18,7 @@ export class DinoTiles {
   @Listen('dinosaurSelected')
   dinosaurSelectedHandler(event: CustomEvent) {
     this.selected = event.detail;
+    this.dinosaurSelectedIndex.emit(this.dinosaurs.indexOf(this.selected));
   }
 
   renderItems() {

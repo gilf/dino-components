@@ -54,6 +54,7 @@ export namespace Components {
   }
   interface DinoTilesAttributes extends StencilHTMLAttributes {
     'dinosaurs'?: Array<Dino>;
+    'onDinosaurSelectedIndex'?: (event: CustomEvent<number>) => void;
   }
 
   interface SideDrawer {

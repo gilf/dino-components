@@ -1,6 +1,6 @@
 {
   "name": "dino-components",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Dino components is a small library of reusable dinosaur components",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
